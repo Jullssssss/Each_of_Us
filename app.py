@@ -67,6 +67,21 @@ def login():
     return render_template('login.html', title='Авторизация', form=form)
 
 
+@app.route('/helping', methods=['GET', 'POST'])
+def helping():
+    form = HelpingForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        problems = Help(
+            problem=form.problem.data,
+            geo=form.geo.data,
+            number=form.number.data
+        )
+        db_sess.add(problems)
+        db_sess.commit()
+        return redirect('/home')
+
+
 @app.route('/')
 @app.route('/home')
 def index():

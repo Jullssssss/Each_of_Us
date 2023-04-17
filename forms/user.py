@@ -18,3 +18,10 @@ class LoginForm(FlaskForm):
     password = PasswordField('Пароль', validators=[DataRequired()])
     remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
+
+    
+class HelpingForm(FlaskForm):
+    problem = TextAreaField("Опишите Вашу проблему")
+    geo = StringField("Ваш адрес")
+    number = StringField("Ваш номер")
+    submit = SubmitField('Отправить')

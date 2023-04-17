@@ -1,0 +1,35 @@
+{% extends "bd.html" %}
+
+{% block content %}
+    <h1>Помощь</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.helping.label }}<br>
+            {{ form.helping(class="form-control") }}<br>
+            {% for error in form.helping.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.geo.label(class="form-control", type="string") }}<br>
+            {% for error in form.geo.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.number.label(class="form-control", type="string") }}<br>
+            {% for error in form.number.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <div>{{ message }}</div>
+    </form>
+{% endblock %}

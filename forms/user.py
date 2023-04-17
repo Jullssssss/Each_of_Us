@@ -21,7 +21,7 @@ class LoginForm(FlaskForm):
 
     
 class HelpingForm(FlaskForm):
-    problem = TextAreaField("Опишите Вашу проблему")
-    geo = StringField("Ваш адрес")
-    number = StringField("Ваш номер")
+    problem = TextAreaField("Опишите Вашу проблему", validators=[DataRequired()])
+    geo = StringField("Ваш адрес", validators=[DataRequired()])
+    number = StringField("Ваш номер", validators=[DataRequired()])
     submit = SubmitField('Отправить')

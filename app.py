@@ -5,6 +5,8 @@ from flask_login import LoginManager, login_required, logout_user, login_user, c
 from forms.user import RegisterForm, LoginForm
 from data.news import News
 from data.users import User
+# подключение helps.pу
+from data.helps import Help
 from data import db_session
 
 app = Flask(__name__)

@@ -69,6 +69,11 @@ def login():
     return render_template('login.html', title='Авторизация', form=form)
 
 
+@app.route("/home")
+def home():
+    return render_template('base.html')
+
+
 @app.route('/helping', methods=['GET', 'POST'])
 def helping():
     form = HelpingForm()

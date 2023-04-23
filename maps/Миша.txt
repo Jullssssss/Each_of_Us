@@ -1,0 +1,20 @@
+@app.route('/marks')  
+def get_marks():
+    # db_sess = db_session.create_session()
+    # marks = db_sess.query(Marks).filter(Marks.is_completed is False).first()
+    # return marks
+    marks = [{"id": "1",  # тестовые данные
+              "title": "вскопать картошку",
+              "created_date": "1681994400000",  # время в миллисекундах от (янв 1, 1970, 00:00:00.000)
+              "is_completed": "False",
+              "x_coord": "51.4019",
+              "y_coord": "39.1103",
+              "user_id": "1"},
+             {"id": "2",
+              "title": "починить автомобиль",
+              "created_date": "1681416600000",
+              "is_completed": "False",
+              "x_coord": "52.4019",
+              "y_coord": "39.1103",
+              "user_id": "3"}]
+    return marks
